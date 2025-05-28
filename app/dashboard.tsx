@@ -1,10 +1,10 @@
-import BottomNavBar from '@/components/NavBar';
-import SensorCard from '@/components/SensorCard';
-import { FontAwesome5 } from '@expo/vector-icons';
 import React, { useEffect, useState } from 'react';
 import { ImageBackground, StyleSheet, Text, View } from 'react-native';
 import MapView, { Marker, Region } from 'react-native-maps';
 
+import BottomNavBar from '@/components/NavBar';
+import SensorCard from '@/components/SensorCard';
+import { FontAwesome5 } from '@expo/vector-icons';
 import { onValue, ref } from 'firebase/database';
 import { database } from './firebaseConfig';
 
@@ -136,6 +136,55 @@ export default function Dashboard() {
       <BottomNavBar />
       </ImageBackground>
     </View>
+
+//     <View style={styles.containerd}>
+//       <View style={styles.containerdt}>
+//         <View>
+
+//         </View>
+//         <View style={styles.userd}>
+//           <Text style={styles.userdataw}>Welcome</Text>
+//           <Text style={styles.usernamen}>{user.name}</Text>
+//         </View>
+
+//       </View>
+//       <View style={styles.containerdm}>
+//          <View style={styles.mapcon}>
+//              <MapView style={styles.map} initialRegion={region} region={region}>
+//                <Marker coordinate={boatLocation}>
+//                  <FontAwesome5 name="ship" size={32} color="#1E90FF" />
+//               </Marker>
+//             </MapView>
+//           </View>
+//          <View style={styles.cardsection}>
+//   <View style={{ flex: 1, marginRight: 10 }}>
+//     <SensorCard
+//       iconName="water-outline"
+//       label="Turbidity"
+//       value={sensorData.turbidity}
+//       unit="NTU"
+//       isSafe={isTurbiditySafe}
+//     />
+//   </View>
+
+//   <View style={{ flex: 1 }}>
+//     <SensorCard
+//       iconName="chemical-weapon"
+//       label="TDS"
+//       value={sensorData.tds}
+//       unit="ppm"
+//       isSafe={isTDSSafe}
+//     />
+//   </View>
+// </View>
+
+
+//       </View>
+//       <View style={styles.containerdd}>
+//          <BottomNavBar />
+//       </View>
+
+//     </View>
   );
 }
 
@@ -188,7 +237,7 @@ const styles = StyleSheet.create({
   },
   map: {
     width: '100%',
-    height: 280,
+    height: 300,
     borderRadius: 12,
   },
   mapcon: {
@@ -198,4 +247,90 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 65,
     overflow: 'hidden',
   },
+
+//   containerd: {
+//   flex: 1,
+//   flexDirection: 'column',
+//   backgroundColor: '#f5fafe', // light background
+// },
+
+// containerdt: {
+//   flex: 2.5,
+//   backgroundColor: '#ffffff',
+//   // borderBottomLeftRadius: 25,
+//   // borderBottomRightRadius: 25,
+//   shadowColor: '#000',
+//   shadowOpacity: 0.1,
+//   shadowOffset: { width: 0, height: 3 },
+//   shadowRadius: 5,
+//   elevation: 5,
+//   justifyContent: 'flex-end'
+// },
+
+// containerdm: {
+//   flex: 10,
+//   backgroundColor: '#eaf4f9',
+//   padding: 10,
+// },
+
+// containerdd: {
+//   flex: 2,
+//   backgroundColor: '#ffffff',
+//   borderTopLeftRadius: 25,
+//   borderTopRightRadius: 25,
+//   padding: 15,
+//   shadowColor: '#000',
+//   shadowOpacity: 0.1,
+//   shadowOffset: { width: 0, height: -3 },
+//   shadowRadius: 5,
+//   elevation: 5,
+// },
+// userd: {
+//   backgroundColor: '#fff',  // Note the corrected color (missing #)
+//   flex: 1,
+//   margin: 0,
+//   padding: 20,
+
+//   // Shadow for iOS
+//   shadowColor: '#000',
+//   shadowOffset: { width: 0, height: -4 },
+//   shadowOpacity: 0.15,
+//   shadowRadius: 4,
+
+//   // Elevation for Android
+//   elevation: 6,
+
+//   // Optional: create visual padding space at bottom
+//   borderBottomWidth: 4,
+//   borderBottomColor: '#ccc',
+//   justifyContent: 'flex-end'
+// },
+// userdataw:{
+
+//  fontSize: 18,
+// fontWeight: '600'
+// },
+// usernamen:{
+//   fontSize: 28,
+//   fontWeight: '900'
+// },
+// map: {
+//     width: '100%',
+//     height: 500,
+//     borderRadius: 12,
+//   },
+//   mapcon: {
+//     backgroundColor: '#fff',
+//     // borderTopLeftRadius: 0,
+//     // borderTopRightRadius: 0,
+//     overflow: 'hidden',
+//     borderRadius: 15
+//   },
+//   cardsection:{
+//     flexDirection:'row',
+//     gap: 13,
+//     padding: 10,
+//     marginTop: -50
+//   }
+
 });
